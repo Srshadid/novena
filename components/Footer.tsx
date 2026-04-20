@@ -24,14 +24,14 @@ export default function Footer() {
                 className="text-[9px] tracking-[0.35em] uppercase text-ivory/25 mb-6"
                 style={{ fontFamily: "var(--font-highway)" }}
               >
-                01 — Book
+                01 — Reservar
               </p>
               <h2
                 className="text-ivory uppercase leading-[0.88] tracking-tight mb-10
                            text-[clamp(2.8rem,4vw,3.8rem)]"
                 style={{ fontFamily: "var(--font-highway-exp)" }}
               >
-                Ready<br />when<br />you are.
+                Listos<br />cuando<br />tú lo estés.
               </h2>
               <Link
                 href="/contact"
@@ -40,7 +40,7 @@ export default function Footer() {
                            hover:bg-ivory hover:text-dusk transition-colors"
                 style={{ fontFamily: "var(--font-highway)" }}
               >
-                Book a session →
+                Reserva una sesión →
               </Link>
             </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
                   className="text-[9px] tracking-[0.35em] uppercase text-ivory/25 mb-6"
                   style={{ fontFamily: "var(--font-highway)" }}
                 >
-                  02 — Follow
+                  02 — Síguenos
                 </p>
                 <a
                   href="https://instagram.com/estudionovena"
@@ -77,7 +77,7 @@ export default function Footer() {
                   className="text-[9px] tracking-[0.35em] uppercase text-ivory/25 mb-3"
                   style={{ fontFamily: "var(--font-highway)" }}
                 >
-                  Studio
+                  Estudio
                 </p>
                 <p
                   className="text-ivory/40 text-xs tracking-[0.15em] uppercase leading-[1.9]"

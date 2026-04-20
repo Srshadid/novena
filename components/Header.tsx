@@ -7,12 +7,12 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
 
 const leftLinks  = [
-  { href: "/gallery",   label: "Gallery"   },
-  { href: "/equipment", label: "Equipment" },
+  { href: "/gallery",   label: "Galería"  },
+  { href: "/equipment", label: "Equipo"   },
 ];
 const rightLinks = [
-  { href: "/artists",   label: "Artists"   },
-  { href: "/contact",   label: "Contact"   },
+  { href: "/artists",   label: "Artistas" },
+  { href: "/contact",   label: "Contacto" },
 ];
 
 const LOGOS: Record<string, string> = {

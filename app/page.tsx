@@ -9,14 +9,14 @@ const marqueeItems = [
   { type: "text",  value: "Mexico City"    },
   { type: "icon",  value: "sun"            },
   { type: "icon",  value: "cactus"         },
-  { type: "text",  value: "Recording"      },
+  { type: "text",  value: "Grabación"       },
   { type: "icon",  value: "pepper"         },
-  { type: "text",  value: "Independent"    },
+  { type: "text",  value: "Independiente"  },
   { type: "icon",  value: "flower"         },
   { type: "icon",  value: "piramid"        },
   { type: "text",  value: "Estudio Novena" },
   { type: "icon",  value: "fork"           },
-  { type: "text",  value: "Sessions"       },
+  { type: "text",  value: "Sesiones"        },
   { type: "icon",  value: "yito"           },
 ] as const;
 
@@ -86,7 +86,7 @@ export default function Home() {
                        opacity-0 animate-fade-up delay-200"
             style={{ fontFamily: "var(--font-highway)", animationFillMode: "forwards" }}
           >
-            Book a session →
+            Reserva una sesión →
           </Link>
 
         </div>
@@ -155,7 +155,7 @@ export default function Home() {
               className="text-[9px] tracking-[0.35em] uppercase text-dusk/30 mb-5"
               style={{ fontFamily: "var(--font-highway)" }}
             >
-              01 — The Studio
+              01 — El Estudio
             </p>
 
             <h2
@@ -163,7 +163,7 @@ export default function Home() {
                          text-[clamp(2.8rem,5vw,4.5rem)]"
               style={{ fontFamily: "var(--font-highway-exp)" }}
             >
-              The studio<br />behind<br />the sound
+              El estudio<br />detrás<br />del sonido
             </h2>
 
             <div
@@ -171,18 +171,18 @@ export default function Home() {
               style={{ fontFamily: "var(--font-highway)", fontSize: "clamp(0.9rem,1.3vw,1rem)" }}
             >
               <p>
-                An independent recording studio in Mexico City&apos;s Colonia Cuauhtémoc —
-                built for musicians who want to work with full creative freedom.
-                No clock pressure, no corporate atmosphere.
+                Un estudio de grabación independiente en la Colonia Cuauhtémoc, Ciudad de México —
+                construido para músicos que quieren trabajar con total libertad creativa.
+                Sin presión de reloj, sin ambiente corporativo.
               </p>
               <p>
-                The name refers to the nine days of preparation that precede something
-                meaningful. Every session is a focused, intentional commitment to the work.
+                El nombre hace referencia a los nueve días de preparación que preceden algo
+                significativo. Cada sesión es un compromiso enfocado e intencional con el trabajo.
               </p>
               <p>
-                We&apos;ve worked with artists across Mexico, Chile, and beyond — from
-                emerging acts to internationally recognized names, recording everything
-                from intimate folk to sprawling psychedelic rock.
+                Hemos trabajado con artistas de México, Chile y más allá — desde actos emergentes
+                hasta nombres reconocidos internacionalmente, grabando desde folk íntimo hasta
+                rock psicodélico expansivo.
               </p>
             </div>
 
@@ -194,7 +194,7 @@ export default function Home() {
                          hover:bg-dusk hover:text-ivory transition-colors"
               style={{ fontFamily: "var(--font-highway)" }}
             >
-              Book a session →
+              Reserva una sesión →
             </Link>
 
           </div>
@@ -256,9 +256,9 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-3 divide-x divide-sand/50">
             {[
-              { label: "Location",   value: "Mexico City" },
-              { label: "Founded",    value: "Independent" },
-              { label: "Discipline", value: "Recording"   },
+              { label: "Ubicación",  value: "Mexico City"   },
+              { label: "Fundado",    value: "Independiente" },
+              { label: "Disciplina", value: "Grabación"     },
             ].map(({ label, value }) => (
               <div key={label} className="py-8 px-4 md:px-8 first:pl-0 last:pr-0">
                 <p

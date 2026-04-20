@@ -18,13 +18,13 @@ export default function Contact() {
           className="text-[10px] tracking-[0.3em] uppercase text-dusk/30 mb-4"
           style={{ fontFamily: "var(--font-highway)" }}
         >
-          Get in touch
+          Contáctanos
         </p>
         <h1
           className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-dusk"
           style={{ fontFamily: "var(--font-highway-exp)" }}
         >
-          Contact
+          Contacto
         </h1>
       </div>
 
@@ -36,7 +36,7 @@ export default function Contact() {
             className="text-dusk/50 text-sm mb-1"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            Book a session with us at:
+            Reserva una sesión con nosotros en:
           </p>
           <a
             href="mailto:info@estudionovena.com"
@@ -67,7 +67,7 @@ export default function Contact() {
             className="text-dusk/40 text-sm mb-8 leading-relaxed"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            For any enquiries, please contact us via the form below.
+            Para cualquier consulta, escríbenos a través del formulario.
           </p>
 
           {sent ? (
@@ -76,10 +76,10 @@ export default function Contact() {
                 className="text-dusk text-2xl uppercase mb-2"
                 style={{ fontFamily: "var(--font-highway-exp)" }}
               >
-                Message sent.
+                Mensaje enviado.
               </p>
               <p className="text-dusk/40 text-sm" style={{ fontFamily: "var(--font-serif)" }}>
-                We&apos;ll be in touch soon.
+                Estaremos en contacto pronto.
               </p>
             </div>
           ) : (
@@ -91,7 +91,7 @@ export default function Contact() {
                       className="text-[9px] tracking-[0.2em] uppercase text-dusk/30"
                       style={{ fontFamily: "var(--font-highway)" }}
                     >
-                      {name === "firstName" ? "First Name" : "Last Name"} *
+                      {name === "firstName" ? "Nombre" : "Apellido"} *
                     </label>
                     <input
                       name={name}
@@ -130,7 +130,7 @@ export default function Contact() {
                   className="text-[9px] tracking-[0.2em] uppercase text-dusk/30"
                   style={{ fontFamily: "var(--font-highway)" }}
                 >
-                  Message *
+                  Mensaje *
                 </label>
                 <textarea
                   name="message"
@@ -150,7 +150,7 @@ export default function Contact() {
                            hover:bg-dusk hover:text-ivory transition-colors"
                 style={{ fontFamily: "var(--font-highway)" }}
               >
-                Send
+                Enviar
               </button>
             </form>
           )}

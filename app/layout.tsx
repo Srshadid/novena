@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Estudio Novena",
-  description: "Music recording studio in Mexico City. Book a session.",
+  description: "Estudio de grabación musical en Ciudad de México. Reserva una sesión.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

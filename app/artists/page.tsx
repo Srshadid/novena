@@ -1,4 +1,4 @@
-export const metadata = { title: "Artists — Estudio Novena" };
+export const metadata = { title: "Artistas — Estudio Novena" };
 
 export default function Artists() {
   return (
@@ -10,13 +10,13 @@ export default function Artists() {
           className="text-[10px] tracking-[0.3em] uppercase text-dusk/30 mb-4"
           style={{ fontFamily: "var(--font-highway)" }}
         >
-          Who we&apos;ve worked with
+          Con quiénes hemos trabajado
         </p>
         <h1
           className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-dusk"
           style={{ fontFamily: "var(--font-highway-exp)" }}
         >
-          Clients
+          Artistas
         </h1>
       </div>
 
@@ -28,9 +28,9 @@ export default function Artists() {
             className="text-dusk/60 text-base leading-relaxed mb-10 max-w-md"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            A selection of the artists and projects that have recorded, mixed, or
-            produced at Estudio Novena. Below, a playlist of what&apos;s come out
-            of our sessions.
+            Una selección de los artistas y proyectos que han grabado, mezclado o
+            producido en Estudio Novena. Aquí abajo, una playlist de lo que ha
+            salido de nuestras sesiones.
           </p>
 
           {/* Artist list hint */}
@@ -64,7 +64,7 @@ export default function Artists() {
               className="text-[9px] tracking-[0.25em] uppercase text-ivory/25"
               style={{ fontFamily: "var(--font-highway)" }}
             >
-              Estudio Novena Friends — Playlist
+              Estudio Novena Friends — Lista de reproducción
             </span>
           </div>
         </div>

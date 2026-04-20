@@ -1,19 +1,19 @@
-export const metadata = { title: "Equipment — Estudio Novena" };
+export const metadata = { title: "Equipo — Estudio Novena" };
 
 const gear: { category: string; items: string[] }[] = [
-  { category: "Computer",    items: ["Mac Studio M1"] },
+  { category: "Computadora", items: ["Mac Studio M1"] },
   {
-    category: "Microphones",
+    category: "Micrófonos",
     items: [
       "Soyuz 017 (Tube)", "Soyuz 011 (Tube)", "AEA r88 (Ribbon Stereo)",
       "4× Shure SM57", "Shure SM58 Beta", "Shure Beta 52",
       "Audio-Technica ATM25", "Sennheiser MD21", "ElectroVoice 635a",
     ],
   },
-  { category: "Amps",  items: ["Silvertone 1484", "Mesa Boogie Bass 400+"] },
+  { category: "Amplificadores", items: ["Silvertone 1484", "Mesa Boogie Bass 400+"] },
   { category: "DAW",   items: ["Pro Tools", "Logic Pro", "Ableton"] },
   {
-    category: "Guitars",
+    category: "Guitarras",
     items: [
       "Gibson Les Paul 50's Standard (P90)", "Gibson SG Standard",
       "Fender Jazzmaster CIJ 2003", "Orville Les Paul Jr.",
@@ -21,18 +21,18 @@ const gear: { category: string; items: string[] }[] = [
     ],
   },
   {
-    category: "Synths",
+    category: "Sintetizadores",
     items: ["Moog Grandmother", "Mellotron", "Roland Juno 6", "Roland Juno 106"],
   },
   {
-    category: "Preamps",
+    category: "Preamplificadores",
     items: [
       "Chandler TG2 (2 ch)", "Cranborne Camden (8 ch)", "BAE 1073",
       "Overstayer Modular Channel (Stereo)", "Yamaha 100 II", "UAD Apollo",
     ],
   },
   {
-    category: "Drums",
+    category: "Batería",
     items: [
       "1960 Ludwig Superclassic set", "50's Slingerland Radioking set",
       "1962 14×5 Ludwig Jazz Festival Snare", "30's 14×8 Slingerland Radioking Snare",
@@ -51,13 +51,13 @@ export default function Equipment() {
           className="text-[10px] tracking-[0.3em] uppercase text-dusk/30 mb-4"
           style={{ fontFamily: "var(--font-highway)" }}
         >
-          What we work with
+          Con qué trabajamos
         </p>
         <h1
           className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-dusk"
           style={{ fontFamily: "var(--font-highway-exp)" }}
         >
-          Equipment
+          Equipo
         </h1>
       </div>
 
