@@ -14,65 +14,89 @@ const IMAGES = [
   { src: "/gallery/BENJAMIN_F200_0499_27.webp",             w: 750, h: 505  },
 ];
 
-// Split alternating + repeat to fill scroll depth
-const raw1 = IMAGES.filter((_, i) => i % 2 === 0);
-const raw2 = IMAGES.filter((_, i) => i % 2 === 1);
-const col1 = [...raw1, ...raw1, ...raw1];
-const col2 = [...raw2, ...raw2, ...raw2];
+const col1imgs = [...IMAGES.slice(0, 4), ...IMAGES.slice(0, 4), ...IMAGES.slice(0, 4)];
+const col2imgs = [...IMAGES.slice(4), ...IMAGES.slice(4), ...IMAGES.slice(4)];
 
 export default function GalleryColumns() {
+  const wrapRef = useRef<HTMLDivElement>(null);
   const col1Ref = useRef<HTMLDivElement>(null);
   const col2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const wrap = wrapRef.current;
+    const c1   = col1Ref.current;
+    const c2   = col2Ref.current;
+    if (!wrap || !c1 || !c2) return;
+
     const update = () => {
-      const y = window.scrollY;
-      if (col1Ref.current) col1Ref.current.style.transform = `translateY(${y * 0.12}px)`;
-      if (col2Ref.current) col2Ref.current.style.transform = `translateY(${-y * 0.12}px)`;
+      const rect     = wrap.getBoundingClientRect();
+      const wrapH    = wrap.offsetHeight;
+      const vh       = window.innerHeight;
+      const maxScroll = Math.max(1, wrapH - vh);
+      const scrolled  = Math.max(0, Math.min(maxScroll, -rect.top));
+      const progress  = scrolled / maxScroll;
+
+      const c1Range = Math.max(0, c1.offsetHeight - vh);
+      const c2Range = Math.max(0, c2.offsetHeight - vh);
+
+      // Col 1: top → bottom (moves up as progress increases)
+      c1.style.transform = `translateY(${-progress * c1Range}px)`;
+      // Col 2: bottom → top (starts at bottom, ends at top)
+      c2.style.transform = `translateY(${-(1 - progress) * c2Range}px)`;
     };
-    update();
+
+    // Run after images have had time to paint their heights
+    const runOnLoad = () => {
+      update();
+      window.removeEventListener("load", runOnLoad);
+    };
+
+    if (document.readyState === "complete") {
+      // Already loaded — wait one frame for layout
+      requestAnimationFrame(update);
+    } else {
+      window.addEventListener("load", runOnLoad);
+    }
+
     window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    window.addEventListener("resize", update, { passive: true });
+    return () => {
+      window.removeEventListener("load", runOnLoad);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
-  return (
-    <div className="bg-dusk min-h-screen pt-16">
-      <div className="flex gap-1 px-1 items-start">
-        {/* Column 1 — moves down on scroll */}
-        <div ref={col1Ref} className="w-1/2 flex flex-col gap-1 will-change-transform">
-          {col1.map((img, i) => (
-            <Image
-              key={i}
-              src={img.src}
-              alt="Estudio Novena"
-              width={img.w}
-              height={img.h}
-              sizes="50vw"
-              className="w-full h-auto block"
-              loading={i < 2 ? "eager" : "lazy"}
-            />
-          ))}
-        </div>
+  const Column = ({
+    imgs,
+    ref: colRef,
+  }: {
+    imgs: typeof IMAGES;
+    ref: React.RefObject<HTMLDivElement | null>;
+  }) => (
+    <div className="w-1/2 overflow-hidden" style={{ height: "100vh" }}>
+      <div ref={colRef} className="will-change-transform" style={{ lineHeight: 0 }}>
+        {imgs.map((img, i) => (
+          <Image
+            key={i}
+            src={img.src}
+            alt="Estudio Novena"
+            width={img.w}
+            height={img.h}
+            sizes="50vw"
+            style={{ display: "block", width: "100%", height: "auto" }}
+            loading="eager"
+          />
+        ))}
+      </div>
+    </div>
+  );
 
-        {/* Column 2 — offset start + moves up on scroll */}
-        <div
-          ref={col2Ref}
-          className="w-1/2 flex flex-col gap-1 will-change-transform"
-          style={{ marginTop: "80px" }}
-        >
-          {col2.map((img, i) => (
-            <Image
-              key={i}
-              src={img.src}
-              alt="Estudio Novena"
-              width={img.w}
-              height={img.h}
-              sizes="50vw"
-              className="w-full h-auto block"
-              loading={i < 2 ? "eager" : "lazy"}
-            />
-          ))}
-        </div>
+  return (
+    <div ref={wrapRef} style={{ height: "400vh" }} className="relative">
+      <div className="sticky top-0 flex" style={{ height: "100vh" }}>
+        <Column imgs={col1imgs} ref={col1Ref} />
+        <Column imgs={col2imgs} ref={col2Ref} />
       </div>
     </div>
   );
