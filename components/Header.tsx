@@ -56,7 +56,7 @@ export default function Header() {
           </div>
 
           {/* Center logo */}
-          <div className="flex-1 md:flex-none flex justify-center md:justify-center md:mx-8">
+          <div className="flex-1 md:flex-none flex justify-start md:justify-center md:mx-8">
             <Link href="/">
               <Image
                 src={LOGOS[theme] ?? LOGOS.azul}

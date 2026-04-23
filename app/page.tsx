@@ -249,13 +249,13 @@ export default function Home() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-3 divide-x divide-sand/50">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-sand/50">
             {[
               { label: "Ubicación",  value: "Mexico City"   },
               { label: "Fundado",    value: "Independiente" },
               { label: "Disciplina", value: "Grabación"     },
             ].map(({ label, value }) => (
-              <div key={label} className="py-8 px-4 md:px-8 first:pl-0 last:pr-0">
+              <div key={label} className="py-6 sm:py-8 px-0 sm:px-4 md:px-8 sm:first:pl-0 sm:last:pr-0">
                 <p
                   className="text-[8px] tracking-[0.3em] uppercase text-dusk/25 mb-2"
                   style={{ fontFamily: "var(--font-highway)" }}
