@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CornerIcons from "@/components/CornerIcons";
 import ThemeToggle from "@/components/ThemeToggle";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Estudio Novena",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <Header />
           <CornerIcons />
+          <ScrollReveal />
           <main className="flex-1">{children}</main>
           <Footer />
           <ThemeToggle />

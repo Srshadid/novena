@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ivory/10">
 
             {/* Col 1 — CTA */}
-            <div className="py-14 md:py-20 md:pr-12">
+            <div className="py-14 md:py-20 md:pr-12" data-animate>
               <p
                 className="text-[9px] tracking-[0.35em] uppercase text-ivory/25 mb-6"
                 style={{ fontFamily: "var(--font-highway)" }}
@@ -37,12 +37,13 @@ export default function Footer() {
               </h2>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-ivory text-ivory
+                className="group inline-flex items-center gap-2 rounded-full border border-ivory text-ivory
                            px-7 py-3 text-[10px] tracking-[0.2em] uppercase
                            hover:bg-ivory hover:text-cobalt transition-colors"
                 style={{ fontFamily: "var(--font-highway)" }}
               >
-                Reserva una sesión →
+                Reserva una sesión
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
               </Link>
             </div>
 

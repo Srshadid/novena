@@ -14,7 +14,7 @@ export default function Contact() {
     <section className="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
 
       {/* Header */}
-      <div className="mb-14 md:mb-20">
+      <div className="mb-14 md:mb-20" data-animate>
         <p
           className="text-[10px] tracking-[0.3em] uppercase text-dusk/30 mb-4"
           style={{ fontFamily: "var(--font-highway)" }}

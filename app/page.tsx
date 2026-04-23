@@ -81,14 +81,15 @@ export default function Home() {
 
             <Link
               href="/contact"
-              className="mt-10 inline-flex items-center gap-2 rounded-full
+              className="group mt-10 inline-flex items-center gap-2 rounded-full
                          border border-cobalt text-cobalt
                          px-7 py-3 text-[10px] tracking-[0.2em] uppercase
                          hover:bg-cobalt hover:text-ivory transition-colors
                          opacity-0 animate-fade-up delay-300"
               style={{ fontFamily: "var(--font-highway)", animationFillMode: "forwards" }}
             >
-              Reserva una sesión →
+              Reserva una sesión
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
             </Link>
           </div>
 
@@ -144,7 +145,7 @@ export default function Home() {
         <div className="relative z-10 grid md:grid-cols-[1fr_1fr] min-h-[600px] md:min-h-[700px] items-stretch">
 
           {/* LEFT — heading + body + CTA */}
-          <div className="flex flex-col justify-center px-5 md:pl-12 lg:pl-20 py-16 md:py-24 pr-8 md:pr-12">
+          <div className="flex flex-col justify-center px-5 md:pl-12 lg:pl-20 py-16 md:py-24 pr-8 md:pr-12" data-animate>
 
             <p
               className="text-[9px] tracking-[0.35em] uppercase text-dusk/30 mb-5"
@@ -183,13 +184,14 @@ export default function Home() {
 
             <Link
               href="/contact"
-              className="self-start inline-flex items-center gap-2
+              className="group self-start inline-flex items-center gap-2
                          rounded-full border border-cobalt text-cobalt
                          px-7 py-3 text-[10px] tracking-[0.2em] uppercase
                          hover:bg-cobalt hover:text-ivory transition-colors"
               style={{ fontFamily: "var(--font-highway)" }}
             >
-              Reserva una sesión →
+              Reserva una sesión
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
             </Link>
 
           </div>
@@ -254,8 +256,13 @@ export default function Home() {
               { label: "Ubicación",  value: "Mexico City"   },
               { label: "Fundado",    value: "Independiente" },
               { label: "Disciplina", value: "Grabación"     },
-            ].map(({ label, value }) => (
-              <div key={label} className="py-6 sm:py-8 px-0 sm:px-4 md:px-8 sm:first:pl-0 sm:last:pr-0">
+            ].map(({ label, value }, i) => (
+              <div
+                key={label}
+                className="py-6 sm:py-8 px-0 sm:px-4 md:px-8 sm:first:pl-0 sm:last:pr-0"
+                data-animate
+                style={{ transitionDelay: `${i * 120}ms` }}
+              >
                 <p
                   className="text-[8px] tracking-[0.3em] uppercase text-dusk/25 mb-2"
                   style={{ fontFamily: "var(--font-highway)" }}
