@@ -3,7 +3,6 @@
 import { useTheme, type Theme } from "./ThemeProvider";
 
 const themes: { id: Theme; label: string }[] = [
-  { id: "default", label: "Default" },
   { id: "azul",    label: "Azul"    },
   { id: "naranja", label: "Naranja" },
 ];
@@ -24,7 +23,7 @@ export default function ThemeToggle() {
           onClick={() => setTheme(id)}
           className={`px-4 py-2 text-[9px] tracking-[0.2em] uppercase transition-colors ${
             theme === id
-              ? "bg-dusk text-ivory"
+              ? "bg-cobalt text-ivory"
               : "bg-ivory/80 text-dusk/40 hover:text-dusk/70"
           }`}
         >

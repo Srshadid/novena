@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import Image from "next/image";
-import { useTheme } from "./ThemeProvider";
+import SvgIcon from "./SvgIcon";
 
 const ICONS = ["araucana", "cactus", "flower", "fork", "pepper", "piramid", "sun", "yito"];
 
@@ -31,20 +30,17 @@ export default function CornerIcons() {
   }, []);
 
   useEffect(() => {
-    const STEP = 250; // px scrolled before next rotation
+    const STEP = 250;
     let last = Math.floor(window.scrollY / STEP);
 
     const onScroll = () => {
       const current = Math.floor(window.scrollY / STEP);
       if (current !== last) {
         last = current;
-
-        // detect dark section under viewport center
         const mid = window.innerHeight / 2;
         const el = document.elementFromPoint(window.innerWidth / 2, mid);
         const section = el?.closest("section[data-section]");
         setDark(section?.getAttribute("data-theme") === "dark");
-
         rotate();
       }
     };
@@ -53,9 +49,7 @@ export default function CornerIcons() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [rotate]);
 
-  const { theme } = useTheme();
-  const lightColor = theme === "azul" ? "blue" : theme === "naranja" ? "orange" : "black";
-  const color = dark ? "white" : lightColor;
+  const colorClass = dark ? "text-ivory" : "text-cobalt";
 
   return (
     <>
@@ -65,12 +59,9 @@ export default function CornerIcons() {
           className={`fixed ${pos} z-30 pointer-events-none transition-opacity duration-200`}
           style={{ opacity: visible ? 0.8 : 0 }}
         >
-          <Image
-            src={`/icons/${color}-icon-${icons[i]}.png`}
-            alt=""
-            width={26}
-            height={26}
-            className="w-[22px] h-[22px] md:w-[26px] md:h-[26px] object-contain"
+          <SvgIcon
+            name={icons[i]}
+            className={`w-[22px] h-[22px] md:w-[26px] md:h-[26px] ${colorClass}`}
           />
         </div>
       ))}

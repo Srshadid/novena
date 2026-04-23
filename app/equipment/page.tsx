@@ -43,6 +43,7 @@ const gear: { category: string; items: string[] }[] = [
 
 export default function Equipment() {
   return (
+    <div>
     <section className="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
 
       {/* Header */}
@@ -54,7 +55,7 @@ export default function Equipment() {
           Con qué trabajamos
         </p>
         <h1
-          className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-dusk"
+          className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-cobalt"
           style={{ fontFamily: "var(--font-highway-exp)" }}
         >
           Equipo
@@ -87,5 +88,6 @@ export default function Equipment() {
         ))}
       </div>
     </section>
+    </div>
   );
 }

@@ -25,26 +25,16 @@
 @theme {
   --color-ivory:  #F2EDDF;
   --color-dusk:   #1A1A18;
-  --color-forest: #2B3D2A;
-  --color-sage:   #4A6644;
+  --color-forest: #0F2870;
+  --color-sage:   #2B52C8;
   --color-flame:  #E35A1A;
-  --color-rust:   #7A1C1C;
+  --color-rust:   #C04010;
   --color-cobalt: #1A3FA3;
   --color-sand:   #C8B89A;
-  --color-mist:   #D4DCE0;
+  --color-mist:   #C8D4EE;
   --font-highway-exp: "HighwayExp", sans-serif;
   --font-highway:     "Highway", sans-serif;
   --font-serif:       "InstrumentSerif", Georgia, serif;
-}
-
-/* ── Theme: azul (cream · cobalt · orange) ───── */
-[data-theme="azul"] {
-  --color-dusk:   #1A3FA3;
-  --color-forest: #0F2870;
-  --color-sage:   #2B52C8;
-  --color-rust:   #C04010;
-  --color-cobalt: #E35A1A;
-  --color-mist:   #C8D4EE;
 }
 
 /* ── Theme: naranja (cream · orange · cobalt) ── */
@@ -53,7 +43,7 @@
   --color-forest: #7A2200;
   --color-sage:   #D4500A;
   --color-rust:   #7A1500;
-  --color-cobalt: #1A3FA3;
+  --color-cobalt: #B83A08;
   --color-mist:   #FFE4D0;
 }
 

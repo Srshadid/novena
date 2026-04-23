@@ -16,7 +16,6 @@ const rightLinks = [
 ];
 
 const LOGOS: Record<string, string> = {
-  default: "/logos/logo-b.png",
   azul:    "/logos/logo-azul.png",
   naranja: "/logos/logo-naranja.png",
 };
@@ -60,7 +59,7 @@ export default function Header() {
           <div className="flex-1 md:flex-none flex justify-center md:justify-center md:mx-8">
             <Link href="/">
               <Image
-                src={LOGOS[theme] ?? LOGOS.default}
+                src={LOGOS[theme] ?? LOGOS.azul}
                 alt="Estudio Novena"
                 width={110}
                 height={38}

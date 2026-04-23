@@ -2,6 +2,7 @@ export const metadata = { title: "Artistas — Estudio Novena" };
 
 export default function Artists() {
   return (
+    <div>
     <section className="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
 
       {/* Header */}
@@ -13,7 +14,7 @@ export default function Artists() {
           Con quiénes hemos trabajado
         </p>
         <h1
-          className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-dusk"
+          className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-cobalt"
           style={{ fontFamily: "var(--font-highway-exp)" }}
         >
           Artistas
@@ -49,7 +50,7 @@ export default function Artists() {
         </div>
 
         {/* Spotify — dark card */}
-        <div className="bg-dusk p-1">
+        <div className="bg-cobalt p-1">
           <iframe
             title="Estudio Novena Friends"
             src="https://open.spotify.com/embed/playlist/5ie7WxjIdQ42qlFVFcUt1r?utm_source=generator&theme=0"
@@ -71,5 +72,6 @@ export default function Artists() {
 
       </div>
     </section>
+    </div>
   );
 }

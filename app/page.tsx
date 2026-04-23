@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ParallaxTexture from "@/components/ParallaxTexture";
 import HalftoneImage from "@/components/HalftoneImage";
+import SvgIcon from "@/components/SvgIcon";
 
 const marqueeItems = [
   { type: "text",  value: "Estudio Novena" },
@@ -25,86 +26,86 @@ export default function Home() {
     <>
 
       {/* ─────────────────────────────────────────────────
-          01  HERO — dark photo + texture01 painterly layer
+          01  HERO — card with rounded corners
       ───────────────────────────────────────────────── */}
       <section
         data-section="hero"
-        data-theme="dark"
-        className="relative h-[94svh] min-h-[520px] overflow-hidden"
+        className="relative pt-5 px-5 pb-5 bg-ivory"
       >
-        <Image
-          src="/gallery/BENJAMIN_F200_0499_18.webp"
-          alt="Session at Estudio Novena"
-          fill
-          priority
-          className="object-cover object-center hero-img"
-          style={{ filter: "contrast(1.32) brightness(0.9) sepia(0.29) saturate(0.8)" }}
-        />
-
-        {/* Halftone dot grid — vintage newspaper feel */}
-        <div className="halftone-dots" />
-
-        {/* Texture overlay — araucaria halftone adds painterly grain */}
-        <ParallaxTexture
-          src="/textures/textures-trippy01.png"
-          speed={0.3}
-          opacity={0.28}
-          blendMode="screen"
-        />
-
-        {/* Bottom gradient */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(26,26,24,0.65) 100%)" }} />
-
-        {/* Content — centered editorial */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-5 md:px-16"
-             style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(26,26,24,0.45) 0%, transparent 100%)" }}
+        {/* Rounded card */}
+        <div
+          className="relative overflow-hidden bg-ivory"
+          style={{
+            height: "calc(94svh - 40px)",
+            minHeight: "520px",
+            borderRadius: "16px",
+            boxShadow: "0 4px 48px rgba(26,26,24,0.10), 0 1px 0px rgba(26,26,24,0.06)",
+          }}
         >
+          <ParallaxTexture
+            src="/textures/halftone-wide-01.png"
+            speed={0.45}
+            opacity={0.14}
+            blendMode="multiply"
+            backgroundSize="contain"
+            overshoot="-20%"
+          />
 
-          <h1
-            className="text-ivory uppercase leading-[0.9] tracking-tight
-                       text-[clamp(2rem,4vw,3.2rem)] max-w-3xl
-                       opacity-0 animate-fade-up"
-            style={{ fontFamily: "var(--font-highway-exp)", animationFillMode: "forwards" }}
-          >
-            El espacio donde abrazamos tu música
-          </h1>
+          {/* Centered content */}
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 md:px-20">
+
+            <p
+              className="text-cobalt/40 text-[9px] tracking-[0.4em] uppercase mb-8
+                         opacity-0 animate-fade-up"
+              style={{ fontFamily: "var(--font-highway)", animationFillMode: "forwards" }}
+            >
+              Estudio de grabación · Ciudad de México
+            </p>
+
+            <h1
+              className="text-cobalt uppercase leading-[0.88] tracking-tight
+                         text-[48px] max-w-[20ch]
+                         opacity-0 animate-fade-up delay-100"
+              style={{ fontFamily: "var(--font-highway-exp)", animationFillMode: "forwards" }}
+            >
+              El espacio donde abrazamos tu música
+            </h1>
+
+            <p
+              className="mt-7 text-dusk/45 italic text-[clamp(1rem,1.6vw,1.25rem)]
+                         opacity-0 animate-fade-up delay-200"
+              style={{ fontFamily: "var(--font-serif)", animationFillMode: "forwards" }}
+            >
+              De LATAM para el mundo
+            </p>
+
+            <Link
+              href="/contact"
+              className="mt-10 inline-flex items-center gap-2 rounded-full
+                         border border-cobalt text-cobalt
+                         px-7 py-3 text-[10px] tracking-[0.2em] uppercase
+                         hover:bg-cobalt hover:text-ivory transition-colors
+                         opacity-0 animate-fade-up delay-300"
+              style={{ fontFamily: "var(--font-highway)", animationFillMode: "forwards" }}
+            >
+              Reserva una sesión →
+            </Link>
+          </div>
 
           <p
-            className="mt-5 text-ivory/80 italic
-                       text-[clamp(1.1rem,2.5vw,1.8rem)]
-                       opacity-0 animate-fade-up delay-100"
-            style={{ fontFamily: "var(--font-serif)", animationFillMode: "forwards" }}
+            className="absolute bottom-6 left-6 md:left-10 z-10
+                       text-dusk/25 text-[9px] tracking-[0.3em] uppercase"
+            style={{ fontFamily: "var(--font-highway)" }}
           >
-            De LATAM para el mundo
+            Estudio · Mexico City
           </p>
-
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex items-center gap-2
-                       rounded-full border border-ivory text-ivory px-7 py-3 text-[10px] tracking-[0.2em] uppercase
-                       hover:bg-ivory hover:text-dusk transition-colors
-                       opacity-0 animate-fade-up delay-200"
-            style={{ fontFamily: "var(--font-highway)", animationFillMode: "forwards" }}
-          >
-            Reserva una sesión →
-          </Link>
-
         </div>
-
-        {/* Location tag — bottom left */}
-        <p
-          className="absolute bottom-6 left-5 md:left-10 z-10
-                     text-ivory/30 text-[9px] tracking-[0.3em] uppercase"
-          style={{ fontFamily: "var(--font-highway)" }}
-        >
-          Estudio · Mexico City
-        </p>
       </section>
 
       {/* ─────────────────────────────────────────────────
           02  MARQUEE
       ───────────────────────────────────────────────── */}
-      <div className="bg-dusk overflow-hidden py-5">
+      <div className="bg-cobalt overflow-hidden py-5">
         <div className="flex items-center animate-marquee-left w-max gap-8">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <div key={i} className="flex items-center shrink-0">
@@ -117,13 +118,7 @@ export default function Home() {
                 </span>
               )}
               {item.type === "icon" && (
-                <Image
-                  src={`/icons/white-icon-${item.value}.png`}
-                  alt=""
-                  width={36}
-                  height={36}
-                  className="w-8 h-8 md:w-9 md:h-9 object-contain opacity-60"
-                />
+                <SvgIcon name={item.value} className="w-8 h-8 md:w-9 md:h-9 text-ivory opacity-60" />
               )}
               <span className="ml-8 text-ivory/20 text-xl leading-none">·</span>
             </div>
@@ -140,7 +135,7 @@ export default function Home() {
         className="relative overflow-hidden"
       >
         <ParallaxTexture
-          src="/textures/textures-trippy03.png"
+          src="/textures/halftone-02.png"
           speed={0.45}
           opacity={0.14}
           blendMode="multiply"
@@ -159,7 +154,7 @@ export default function Home() {
             </p>
 
             <h2
-              className="uppercase leading-[0.9] tracking-tight text-dusk mb-8
+              className="uppercase leading-[0.9] tracking-tight text-cobalt mb-8
                          text-[clamp(2.8rem,5vw,4.5rem)]"
               style={{ fontFamily: "var(--font-highway-exp)" }}
             >
@@ -189,9 +184,9 @@ export default function Home() {
             <Link
               href="/contact"
               className="self-start inline-flex items-center gap-2
-                         rounded-full border border-dusk text-dusk
+                         rounded-full border border-cobalt text-cobalt
                          px-7 py-3 text-[10px] tracking-[0.2em] uppercase
-                         hover:bg-dusk hover:text-ivory transition-colors"
+                         hover:bg-cobalt hover:text-ivory transition-colors"
               style={{ fontFamily: "var(--font-highway)" }}
             >
               Reserva una sesión →
@@ -218,7 +213,7 @@ export default function Home() {
         data-section="photo"
         data-theme="dark"
         className="relative overflow-hidden"
-        style={{ height: "min(65vw, 680px)" }}
+        style={{ height: "min(80vw, 900px)" }}
       >
         <div className="absolute inset-0 overflow-hidden">
           <Image
@@ -232,7 +227,7 @@ export default function Home() {
         </div>
         {/* Landscape split texture — screen blend adds a color-field effect */}
         <ParallaxTexture
-          src="/textures/textures-trippy02.png"
+          src="/textures/grain-01.png"
           speed={0.55}
           opacity={0.22}
           blendMode="screen"
@@ -247,7 +242,7 @@ export default function Home() {
         className="relative overflow-hidden border-y border-sand/50"
       >
         <ParallaxTexture
-          src="/textures/textures-trippy04.png"
+          src="/textures/grain-02.png"
           speed={0.4}
           opacity={0.12}
           blendMode="multiply"
@@ -268,7 +263,7 @@ export default function Home() {
                   {label}
                 </p>
                 <p
-                  className="text-dusk text-base md:text-lg uppercase leading-tight"
+                  className="text-cobalt text-base md:text-lg uppercase leading-tight"
                   style={{ fontFamily: "var(--font-highway-exp)" }}
                 >
                   {value}

@@ -5,12 +5,14 @@ import ParallaxTexture from "./ParallaxTexture";
 export default function Footer() {
 
   return (
-    <footer className="bg-dusk text-ivory relative overflow-hidden border-t-2 border-ivory/10">
+    <footer className="bg-cobalt text-ivory relative overflow-hidden border-t border-ivory/10">
       <ParallaxTexture
-        src="/textures/textures-trippy05.png"
+        src="/textures/halftone-wide-01.png"
         speed={0.45}
-        opacity={0.14}
-        blendMode="screen"
+        opacity={0.18}
+        blendMode="overlay"
+        backgroundSize="contain"
+        overshoot="-20%"
       />
 
       {/* ── 3-column grid ─────────────────────────── */}
@@ -37,7 +39,7 @@ export default function Footer() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-ivory text-ivory
                            px-7 py-3 text-[10px] tracking-[0.2em] uppercase
-                           hover:bg-ivory hover:text-dusk transition-colors"
+                           hover:bg-ivory hover:text-cobalt transition-colors"
                 style={{ fontFamily: "var(--font-highway)" }}
               >
                 Reserva una sesión →

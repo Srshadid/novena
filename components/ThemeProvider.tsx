@@ -2,27 +2,28 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-export type Theme = "default" | "azul" | "naranja";
+export type Theme = "azul" | "naranja";
 
 interface ThemeCtxValue {
   theme: Theme;
   setTheme: (t: Theme) => void;
 }
 
-const ThemeCtx = createContext<ThemeCtxValue>({ theme: "default", setTheme: () => {} });
+const ThemeCtx = createContext<ThemeCtxValue>({ theme: "azul", setTheme: () => {} });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("default");
+  const [theme, setThemeState] = useState<Theme>("azul");
 
   useEffect(() => {
-    const saved = (localStorage.getItem("theme") as Theme) || "default";
+    const raw = localStorage.getItem("theme");
+    const saved: Theme = raw === "naranja" ? "naranja" : "azul";
     apply(saved);
   }, []);
 
   function apply(t: Theme) {
     setThemeState(t);
     localStorage.setItem("theme", t);
-    document.documentElement.dataset.theme = t === "default" ? "" : t;
+    document.documentElement.dataset.theme = t === "azul" ? "" : t;
   }
 
   return (

@@ -8,6 +8,8 @@ interface Props {
   opacity?: number;
   blendMode?: string;
   className?: string;
+  backgroundSize?: string;
+  overshoot?: string;  // CSS inset value; smaller = less parallax range + smaller apparent dots with cover
 }
 
 export default function ParallaxTexture({
@@ -16,6 +18,8 @@ export default function ParallaxTexture({
   opacity = 0.07,
   blendMode = "multiply",
   className = "",
+  backgroundSize = "cover",
+  overshoot = "-50%",
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -43,9 +47,9 @@ export default function ParallaxTexture({
       aria-hidden="true"
       className={`absolute pointer-events-none will-change-transform ${className}`}
       style={{
-        inset: "-50%",
+        inset: overshoot,
         backgroundImage: `url(${src})`,
-        backgroundSize: "cover",
+        backgroundSize,
         backgroundPosition: "center",
         opacity,
         mixBlendMode: blendMode as React.CSSProperties["mixBlendMode"],

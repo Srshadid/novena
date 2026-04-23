@@ -10,6 +10,7 @@ export default function Contact() {
     setForm(p => ({ ...p, [e.target.name]: e.target.value }));
 
   return (
+    <div>
     <section className="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
 
       {/* Header */}
@@ -21,7 +22,7 @@ export default function Contact() {
           Contáctanos
         </p>
         <h1
-          className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-dusk"
+          className="text-[clamp(3rem,10vw,8rem)] uppercase leading-none tracking-tight text-cobalt"
           style={{ fontFamily: "var(--font-highway-exp)" }}
         >
           Contacto
@@ -146,8 +147,8 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="self-start rounded-full border border-dusk text-dusk px-10 py-4 text-[10px] tracking-[0.2em] uppercase
-                           hover:bg-dusk hover:text-ivory transition-colors"
+                className="self-start rounded-full border border-cobalt text-cobalt px-10 py-4 text-[10px] tracking-[0.2em] uppercase
+                           hover:bg-cobalt hover:text-ivory transition-colors"
                 style={{ fontFamily: "var(--font-highway)" }}
               >
                 Enviar
@@ -157,5 +158,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

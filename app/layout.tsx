@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: `
           (function(){
             var t = localStorage.getItem('theme');
-            if (t && t !== 'default') document.documentElement.dataset.theme = t;
+            if (t === 'naranja') document.documentElement.dataset.theme = 'naranja';
           })();
         `}} />
       </head>
